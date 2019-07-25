@@ -30,7 +30,7 @@
 
 <body>
 
-	<div class="container">
+	<!-- <div class="container">
 
 		<div class="row">
 
@@ -45,32 +45,67 @@
 			
 		</div>
 
-	</div>
+	</div> -->
 
 	<div class="container">
  
-		<div class="row">
 		   <div class="heading">Одежда для девочек</div>
-		</div>
-		
+	
 		<div class="row">
 
             <div class="col-sm-3">
 			    <div class="navigation">  
                     <nav class="navigation__nav">
                         <ul class="navigation__list">
-							<li class="navigation__title">Категории</li>
-							 
-							<li class="navigation__title">Размер
-
-
+						  	<li class="navigation__block">
+							    <span id="categories" class="navigation__title">Категории</span>
+							        <ul id="categoriesList" class="category__list">
+									    <li class="category__title"><a href="#">Одежда для мужчин</a></li>
+									    <li class="category__title"><a href="#">Одежда для женщин</a></li>
+									    <li class="category__title"><a href="#">Одежда для детей</a></li>
+									    <li class="category__title"><a href="#">Одежда для мальчиков</a></li>
+									    <li class="category__title"><a href="#">Одежда для девочек</a></li>
+									    <li class="category__title"><a href="#">Одежда для подростков</a></li>
+									    <li class="category__title"><a href="#">Одежда для новорожденных</a></li>
+								    </ul>
+							</li>	
+							<li class="navigation__block">
+							    <span class="navigation__title">Размер </span>    
+                                    <select class="select__list" name="size" id="size">
+										<option value="56">56</option>
+										<option value="54">54</option>
+										<option value="52">52</option>
+										<option value="50">50</option>
+								    </select>		 	
 							</li>
-
-							<li class="navigation__title">Материал</li>
-
-
-					    </ul>
-
+							
+							<li class="navigation__block">
+							    <span class="navigation__title">Цвет </span>
+								
+									<select class="select__list" name="color" id="color">
+									    <option value="all">Цвет</option>
+										<option value="red">Красный</option>
+										<option value="blue">Голубой</option>
+										<option value="yellow">Желтый</option>
+										<option value="pink">Розовый</option>
+										<option value="grey">Серый</option>
+										<option value="darck blue">Синий</option>
+									</select>
+									
+							</li>
+ 
+					        <li class="navigation__block">
+							    <span id="material" class="navigation__title">Материал</span>
+							       <ul id="materialList" class="category__list">
+									  <li class="category__title"><a href="#">Все</a></li>
+									  <li class="category__title"><a href="#">100% хлопок</a></li>
+									  <li class="category__title"><a href="#">Трикотаж</a></li>
+									  <li class="category__title"><a href="#">Шерсть</a></li>
+									  <li class="category__title"><a href="#">Джинсовый</a></li>
+									  <li class="category__title"><a href="#">Составной</a></li>
+								   </ul> 
+							</li>    
+						 </ul>
 					</nav>
 					
 					<div class="filter__title">Применить фильтр</div>

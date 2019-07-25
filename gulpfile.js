@@ -11,7 +11,7 @@ var gulp           = require('gulp'),
 		cache          = require('gulp-cache'),
 		autoprefixer   = require('gulp-autoprefixer'),
 		ftp            = require('vinyl-ftp'),
-		notify         = require("gulp-notify"),
+		notify         = require('gulp-notify'),
 		rsync          = require('gulp-rsync');
 
 	gulp.task('browser-sync', function() {
@@ -47,8 +47,15 @@ gulp.task('js', ['common-js'], function() {
 	.pipe(browserSync.reload({ stream: true }));
 });
 
+
+gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
+	gulp.watch('app/sass/**/*.scss', ['sass']);
+	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
+	gulp.watch('app/*.html', browserSync.reload);
+});
+
 gulp.task('sass', function() {
-	return gulp.src('app/sass/**/*.sass')
+	return gulp.src('app/sass/**/*.scss', ['sass'])
 	.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
 	.pipe(rename({suffix: '.min', prefix : ''}))
 	.pipe(autoprefixer(['last 15 versions']))
@@ -57,11 +64,7 @@ gulp.task('sass', function() {
 	.pipe(browserSync.stream())
 });
 
-gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
-	gulp.watch('app/sass/**/*.sass', ['sass']);
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
-	gulp.watch('app/*.html', browserSync.reload);
-});
+
 
 gulp.task('imagemin', function() {
 	return gulp.src('app/img/**/*')
@@ -69,7 +72,7 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest('dist/img')); 
 });
 
-gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
+gulp.task('build', ['removedist', 'imagemin', 'scss', 'js'], function() {
 
 	var buildFiles = gulp.src([
 		'app/*.html',

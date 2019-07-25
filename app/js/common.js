@@ -1,5 +1,16 @@
 $(function() {
+ $('#categoriesList').hide();
+	$('#categories').click(function() {
+    $('#categoriesList').slideToggle('slow');
+	});
 
-	// Custom JS
+	$('#materialList').hide();
+	$('#material').click(function() {
+    $('#materialList').slideToggle('slow');
+	});
+
+
 
 });
+
+

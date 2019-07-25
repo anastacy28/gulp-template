@@ -1,0 +1,22 @@
+.navigation {
+     border: 1px solid $border-color-primary;
+     background-color: #fbfbfb;
+  
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        color: #343434;
+        font-family: "Arial", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+/* Text style for "К, атегори" */
+        letter-spacing: 0.14px;
+        border-bottom: 1px solid $border-color-primary;
+    }
+
+  &__title {
+    font-weight: 700;
+    padding-left: 20px;
+  }
+}
